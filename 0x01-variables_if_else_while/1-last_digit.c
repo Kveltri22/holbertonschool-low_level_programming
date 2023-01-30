@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
+/* print the last digit of the number stored in variable n */
 /**
 * main - Entry point
 *
