@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-* Main- entry point code to print all signle digit numbers
+* Main- Print all signle digit numbers.
 *
 * Return: Always 0 (success)
 */
