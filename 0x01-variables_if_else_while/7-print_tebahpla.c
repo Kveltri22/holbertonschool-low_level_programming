@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 /**
-* main: description code to print all signle digit numbers no char command
+* Main- entry point code to print all signle digit numbers
+*
 * Return: Always 0 (success)
 */
 
