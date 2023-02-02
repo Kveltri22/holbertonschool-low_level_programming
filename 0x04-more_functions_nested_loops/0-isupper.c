@@ -1,12 +1,21 @@
 #include "main.h"
-#include "stdio.h"
 /**
-* add prototy
+*  _isupper - a function that checks for uppercase character.
 *
-* return - always 0
+* @c:int to be checked
+*
+* Return:1 if true 0 if false
 */
 
-int main(void)
+int _isupper(int c)
 {
+	if (c >= 'A' && c <= 'Z')
+	{
+		return (0);
+	}
+	else
+	{
+		return (1);
+	}
 
 }
