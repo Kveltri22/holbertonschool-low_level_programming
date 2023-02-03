@@ -1,8 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
-* print_number - print number 1-9
-* @c: char
+* print_numbers - print numbers 1-9
 * Return: 0
 */
 
