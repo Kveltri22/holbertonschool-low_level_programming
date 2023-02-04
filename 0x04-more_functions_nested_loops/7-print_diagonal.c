@@ -1,20 +1,31 @@
 #include "main.h"
 #include <stdio.h>
 /**
-* print_diagonal - print a line
-* @n: legnth of line
-* Return: 0
+* print_diagonal - print a diagonal line
+* @n: number of times the '\' char is printed
+* Return: int n
 */
 
 void print_diagonal(int n)
 {
-	while (!(n <= 0))
+	int c, i;
+
+	c = 0;
+
+	while (n > 0)
 	{
+		i = c;
+		while (i > 0)
+	{
+		_putchar(' ');
+		i--;
+	}
 		_putchar('\\');
 		_putchar('\n');
-		_putchar(' ');
-		n++;
+		c++;
+		n--;
 }
+	if (c < 1)
 		_putchar('\n');
 
 }
