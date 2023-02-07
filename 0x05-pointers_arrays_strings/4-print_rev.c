@@ -6,7 +6,7 @@
 * @s: is the character
 */
 
-void _puts(char *s)
+void print_rev(char *s)
 {
 	int count;
 
