@@ -4,7 +4,6 @@
 /**
 * puts2 - every other char.
 * @str: string to process.
-* @i: integer
 */
 
 void puts2(char *str)
