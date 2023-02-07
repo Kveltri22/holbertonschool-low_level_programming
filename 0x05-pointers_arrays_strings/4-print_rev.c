@@ -7,16 +7,19 @@
 *
 * Return: string in reverse
 */
-char *_strcpy(char *dest, char *src)
-{
-	int i;
 
-	i = 0;
-	while (src[i] != '\0')
+void print_rev(char *s)
+{
+	int i = 0;
+
+	while (s[i] != 0)
 	{
-	dest[i] = src[i];
 	i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (i > 0)
+	{
+	i--;
+	putchar(s[i]);
+	}
+	putchar('\n');
 }
