@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 /**
- * main -print file 
+ * main -print file
  *
- * Return: 0
+ * Return: void
  */
 
-int main()
+int main(void)
 {
 	printf("%s\n", __FILE__);
 	return (0);
