@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _strcpy - hjk
+ * _strncat - hjk
  * @dest: pointer
  * @src: copy to desitnation
  * Return: a copy of src
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i;
 
