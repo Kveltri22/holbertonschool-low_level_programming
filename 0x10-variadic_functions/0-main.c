@@ -1,18 +1,27 @@
-#include <stdio.h>
 #include "variadic_functions.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ *sum_them_all - sum up all 
+ *@n: in n
+ *Return: sum
  */
-int main(void)
-{
-	int sum;
 
-	sum = sum_them_all(2, 98, 1024);
-	printf("%d\n", sum);
-	sum = sum_them_all(4, 98, 1024, 402, -1024);
-	printf("%d\n", sum);
-	return (0);
+int sum_them_all(const unsigned int n, ...)
+{
+	va_list list;
+	int sum = 0;
+	unsigned int i;
+
+	if (n == 0)
+		return (0);
+
+	va_start(list, n);
+	while (i < n)
+	{
+		sum = sum + va_arg(list, int);
+		i++;
+	}
+	va_end(list);
+
+	return (sum);
 }
