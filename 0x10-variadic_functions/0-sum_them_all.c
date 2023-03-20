@@ -1,9 +1,9 @@
 #include "variadic_functions.h"
 
 /**
- *sum_them_all - sum of 
- *@n: int n
- *Return: sum
+ *sum_them_all - kill them all
+ *@n: county county
+ *Return: I'm really sorry Evan
  */
 
 int sum_them_all(const unsigned int n, ...)
