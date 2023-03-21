@@ -1,3 +1,4 @@
+include "main.h"
 /**
  * flip_bits - returns the number of bits.
  * @n: number to flip
