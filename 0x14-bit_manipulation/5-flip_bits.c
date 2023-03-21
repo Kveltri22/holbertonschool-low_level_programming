@@ -1,20 +1,22 @@
-include "main.h"
+#include "main.h"
 /**
- * flip_bits - returns the number of bits.
- * @n: number to flip
- * @m: number
- * Return: returns the number of bits.
+ * flip_bits - Entry Point
+ * @n: Input
+ * @m: Input
+ * Return: 0.
  */
-
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int b = 0;
+	unsigned int count = 0;
 
-	n = n ^ m;
-	while (n);
+	while (n != 0 || m != 0)
 	{
-		n &= (n - 1);
-		++b;
+		if ((n & 1) != (m & 1))
+			count++;
+
+		m = m >> 1;
+		n = n >> 1;
 	}
-	return (b);
+
+	return (count);
 }
