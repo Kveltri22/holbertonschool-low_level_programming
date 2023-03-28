@@ -1,107 +1,44 @@
-#ifndef __hash_tables__
-#define __hash_tables__
+#ifndef HASH_TABLES_H
+#define HASH_TABLES_H
 
 #include <stdio.h>
+#include <String.h>
+#include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdarg.h>
 
 /**
  * struct hash_node_s - Node of a hash table
- * @key: key
- * @value: Value
- * @next: pointer
+ * @key: The key, string
+ * The key is unique in the HashTable
+ * @value: The value corresponding to a key
+ * @next: A pointer to the next node of the List
  */
-
 typedef struct hash_node_s
 {
-	char *key;
-	char *value;
-	struct hash_node_s *next;
+		char *key;
+		char *value;
+		struct hash_node_s *next;
 } hash_node_t;
 
 /**
- * struct hash_table_s - Hash table
- * @size: size of array
- * @array: Array
+ * struct hash_table_s - Hash table data structure
+ * @size: The size of the array
+ * @array: An array of size @size
+ * Each cell of this array is a pointer to the first node of a linked list.
  */
-
 typedef struct hash_table_s
 {
-	unsigned long int size;
-	hash_node_t **array;
+		unsigned long int size;
+		hash_node_t **array;
 } hash_table_t;
 
 hash_table_t *hash_table_create(unsigned long int size);
 unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
-hash_node_t *set_pair(const char *key, const char *value);
-int set_pair_only(hash_table_t *ht, const char *key, const char *value,
-				unsigned long int size);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
-void hash_table_delete(hash_table_t *ht);
-
-/**
- * struct hash_node_s - Node
- * @key: key
- * @value: value
- * @next: point to next
- * @sprev: pointer to previous
- * @snext: point to next element
- */
-
-typedef struct hash_node_s
-{
-	char *key;
-	char *value;
-	struct hash_node_s *next;
-	struct hash_node_s *sprev;
-	struct hash_node_s *snext;
-} hash_node_t;
-
-/**
- * struct hash_table_s - Sorted hash
- * @size: size of array
- * @array: array of size
- * @shead: pointer to head
- * @stail: pointer to stail
- */
-
-typedef struct hash_table_s:
-{
-	unsigned long int size;
-	hash_node_t **array;
-	hash_node_t *shead;
-	hash_node_t *stail;
-} hash_table_t;
-
-hash_table_t *hash_table_create(unsigned long int size);
-
-hash_node_t *set_spair(const char *key, const char *value);
-
-hash_node_t *set_spair_only(hash_table_t *ht, const char *key,
-				const char *value, unsigned long int index);
-
-int update_value(hash_node_t *node, const char *value);
-
-hash_node_t *set_spair_front(hash_table_t *ht, const char *key,
-							     const char *value, unsigned long int index);
-
-int slist_set_first(hash_table_t *ht, hash_node_t *node);
-
-int slist_set(hash_table_t *ht, hash_node_t *old_node, hash_node_t *node);
-
-int slist_set_end(hash_table_t *ht, hash_node_t *node);
-
-int hash_table_set(hash_table_t *ht, const char *key, const char *value);
-
-char *hash_table_get(const hash_table_t *ht, const char *key);
-
-void hash_table_print(const hash_table_t *ht);
-
-void hash_table_print_rev(const hash_table_t *ht);
-
 void hash_table_delete(hash_table_t *ht);
 
 #endif
