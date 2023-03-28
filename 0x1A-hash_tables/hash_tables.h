@@ -51,14 +51,14 @@ void hash_table_delete(hash_table_t *ht);
  * @snext: point to next element
  */
 
-typedef struct shash_node_s
+typedef struct hash_node_s
 {
 	char *key;
 	char *value;
 	struct hash_node_s *next;
 	struct hash_node_s *sprev;
 	struct hash_node_s *snext;
-} shash_node_t;
+} hash_node_t;
 
 /**
  * struct hash_table_s - Sorted hash
@@ -68,7 +68,7 @@ typedef struct shash_node_s
  * @stail: pointer to stail
  */
 
-typedef struct shash_table_s:
+typedef struct hash_table_s:
 {
 	unsigned long int size;
 	hash_node_t **array;
@@ -76,11 +76,11 @@ typedef struct shash_table_s:
 	hash_node_t *stail;
 } hash_table_t;
 
-hash_table_t *shash_table_create(unsigned long int size);
+hash_table_t *hash_table_create(unsigned long int size);
 
 hash_node_t *set_spair(const char *key, const char *value);
 
-hash_node_t *set_spair_only(shash_table_t *ht, const char *key,
+hash_node_t *set_spair_only(hash_table_t *ht, const char *key,
 				const char *value, unsigned long int index);
 
 int update_value(hash_node_t *node, const char *value);
