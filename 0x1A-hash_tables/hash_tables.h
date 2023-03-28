@@ -65,10 +65,10 @@ typedef struct shash_node_s
  * @size: size of array
  * @array: array of size
  * @shead: pointer to head
- * @stail@ Point to tail
+ * @stail: pointer to stail
  */
 
-typedef struct shash_table_s
+typedef struct shash_table_s:
 {
 	unsigned long int size;
 	shash_node_t **array;
