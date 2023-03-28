@@ -1,10 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * free_node - Free a node.
- * @node: node
- * Return: void
- */
+* free_node - Free a node.
+* @node: node
+* Return: void
+*/
 
 void free_node(hash_node_t *node)
 {
@@ -14,20 +14,20 @@ void free_node(hash_node_t *node)
 }
 
 /**
- * hash_table_set - Set a value
- * @ht: Hash
- * @key: Key
- * @value: Value
- * Return: 1
- */
+* hash_table_set - Set a value
+* @ht: Hash
+* @key: Key
+* @value: Value
+* Return: 1
+*/
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	hash_node_t *new_node, *current;
+unsigned long int index;
+hash_node_t *new_node, *current;
 
-	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
-			return (0);
+if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
+	return (0);
 	index = key_index((const unsigned char *)key, ht->size);
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
@@ -38,18 +38,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[index] == NULL)
 		ht->array[index] = new_node;
 	else
-	{
+{
 		current = ht->array[index];
 		if (strcmp(current->key, key) == 0)
-		{
-			new_node->next = current->next;
-			ht->array[index] = new_node;
-			free_node(current);
+	{
+		new_node->next = current->next;
+		ht->array[index] = new_node;
+		free_node(current);
 			return (1);
-		}
+	}
 		while (current->next != NULL && strcmp(current->next->key, key) != 0)
-		{ current = current->next;
-		}
+	{ current = current->next;
+	}
 		if (strcmp(current->key, key) == 0)
 		{
 			new_node->next = current->next->next;
