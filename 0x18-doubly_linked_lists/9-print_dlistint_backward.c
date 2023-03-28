@@ -1,13 +1,12 @@
 #include "lists.h"
-
 /**
- * print_dlistint_backward- prints all backwards
- * @h: head of list
- * Return: nodes
+ *print_dlistint_backward - prints list backwards
+ *@h: head of list duh
+ *Return: nodes
  */
 size_t print_dlistint_backward(const dlistint_t *h)
 {
-	size_t numNodes = 0;
+	int count = 0;
 
 	if (!h)
 		return (0);
@@ -18,9 +17,8 @@ size_t print_dlistint_backward(const dlistint_t *h)
 	while (h)
 	{
 		printf("%d\n", h->n);
+		count++;
 		h = h->prev;
-		numNodes++;
 	}
-
-	numNodes++;
+	return (count);
 }
