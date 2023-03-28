@@ -43,7 +43,7 @@ void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
 
 /**
- * struct shash_node_s - Node
+ * struct hash_node_s - Node
  * @key: key
  * @value: value
  * @next: point to next
@@ -55,13 +55,13 @@ typedef struct shash_node_s
 {
 	char *key;
 	char *value;
-	struct shash_node_s *next;
-	struct shash_node_s *sprev;
-	struct shash_node_s *snext;
+	struct hash_node_s *next;
+	struct hash_node_s *sprev;
+	struct hash_node_s *snext;
 } shash_node_t;
 
 /**
- * struct shash_table_s - Sorted hash
+ * struct hash_table_s - Sorted hash
  * @size: size of array
  * @array: array of size
  * @shead: pointer to head
@@ -71,37 +71,37 @@ typedef struct shash_node_s
 typedef struct shash_table_s:
 {
 	unsigned long int size;
-	shash_node_t **array;
-	shash_node_t *shead;
-	shash_node_t *stail;
-} shash_table_t;
+	hash_node_t **array;
+	hash_node_t *shead;
+	hash_node_t *stail;
+} hash_table_t;
 
-shash_table_t *shash_table_create(unsigned long int size);
+hash_table_t *shash_table_create(unsigned long int size);
 
-shash_node_t *set_spair(const char *key, const char *value);
+hash_node_t *set_spair(const char *key, const char *value);
 
-shash_node_t *set_spair_only(shash_table_t *ht, const char *key,
+hash_node_t *set_spair_only(shash_table_t *ht, const char *key,
 				const char *value, unsigned long int index);
 
-int update_value(shash_node_t *node, const char *value);
+int update_value(hash_node_t *node, const char *value);
 
-shash_node_t *set_spair_front(shash_table_t *ht, const char *key,
+hash_node_t *set_spair_front(hash_table_t *ht, const char *key,
 							     const char *value, unsigned long int index);
 
-int slist_set_first(shash_table_t *ht, shash_node_t *node);
+int slist_set_first(hash_table_t *ht, hash_node_t *node);
 
-int slist_set(shash_table_t *ht, shash_node_t *old_node, shash_node_t *node);
+int slist_set(hash_table_t *ht, hash_node_t *old_node, hash_node_t *node);
 
-int slist_set_end(shash_table_t *ht, shash_node_t *node);
+int slist_set_end(hash_table_t *ht, hash_node_t *node);
 
-int shash_table_set(shash_table_t *ht, const char *key, const char *value);
+int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 
-char *shash_table_get(const shash_table_t *ht, const char *key);
+char *hash_table_get(const hash_table_t *ht, const char *key);
 
-void shash_table_print(const shash_table_t *ht);
+void hash_table_print(const hash_table_t *ht);
 
-void shash_table_print_rev(const shash_table_t *ht);
+void hash_table_print_rev(const hash_table_t *ht);
 
-void shash_table_delete(shash_table_t *ht);
+void hash_table_delete(hash_table_t *ht);
 
 #endif
