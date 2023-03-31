@@ -1,2 +1,2 @@
 Static Library 
-
+project
